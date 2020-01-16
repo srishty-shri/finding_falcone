@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import MainContents from './Contents';
 import {Link} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -16,16 +15,18 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
+  fontColor : {
+    color : 'white'
+  }
 }));
 export default function ButtonAppBar(props) {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
        <AppBar position="static">
         <Toolbar>
-          <Button color="inherit"><Link to="/">Reset</Link></Button>
-          <Button color="inherit">Geek Trust Home</Button>
+          <Button color="inherit" ><Link className={classes.fontColor} to="/reset">Reset</Link></Button>
+          <Button color="inherit"><a className={classes.fontColor} href="https://www.geektrust.in/">Geek Trust Home</a></Button>
         </Toolbar>
       </AppBar> 
     </div>

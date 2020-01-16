@@ -4,9 +4,9 @@ import Contents from './components/Contents';
 import "./App.css";
 import {
   BrowserRouter as Router,
+  Redirect,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function TotalApp(props) {
@@ -21,6 +21,7 @@ function App() {
     <div className="App">
       <Router>
           <Switch>
+            <Redirect from="/reset" to="/" />
             <Route path="/" component={TotalApp} />
           </Switch>
       </Router>
